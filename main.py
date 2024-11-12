@@ -1,3 +1,6 @@
+
+#uvicorn main:app --reload
+
 from fastapi import FastAPI
 from pydantic import BaseModel
 import yt_dlp
@@ -37,7 +40,7 @@ def descargar_audio(link):
             'preferredcodec': 'wav',
             'preferredquality': '192',
         }],
-        'proxy': 'http://proxy_address:proxy_port',
+        
     }
     with yt_dlp.YoutubeDL(ydl_opts) as ydl:
         info_dict = ydl.extract_info(linkRecortado, download=True)  
