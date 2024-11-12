@@ -37,7 +37,7 @@ def descargar_audio(link):
             'preferredcodec': 'wav',
             'preferredquality': '192',
         }],
-        'cookies': 'cookies.txt', 
+        'proxy': 'http://proxy_address:proxy_port',
     }
     with yt_dlp.YoutubeDL(ydl_opts) as ydl:
         info_dict = ydl.extract_info(linkRecortado, download=True)  
